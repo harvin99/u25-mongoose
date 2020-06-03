@@ -1,0 +1,5 @@
+extend ./layout/common.pug
+block content
+  h1.text-center This is transaction create page
+  form(action='/transactions/create', method="POST")
+    include _form_transactions_create_field.pug

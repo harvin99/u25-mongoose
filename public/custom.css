@@ -1,0 +1,21 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 2em 1em;
+  line-height: 1.5em;
+}
+.logo {
+  height: 45px;
+  width: 45px;
+}
+.username {
+  margin: auto 0px;
+}
+#avatar {
+  height: 40%;
+  width: 30%;
+  margin: 0 auto;
+}

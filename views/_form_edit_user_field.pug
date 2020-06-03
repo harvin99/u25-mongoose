@@ -1,0 +1,13 @@
+h1.text-center Edit user
+.container
+  .form-group
+    label(for='name') Name:
+      input.form-control(type='text', name='name', value= user.name)
+  .form-group
+    label(for='email') Email:
+      input.form-control(type='text', name='email', value= user.email)
+  .form-group
+    label(for='phone') Phone:
+      input.form-control(type='text', name='phone', value= user.phone)
+  button.btn.btn-primary.mr-2(type='submit') Save
+  a.btn.btn-secondary(href='/users') Cancel

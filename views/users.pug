@@ -1,0 +1,55 @@
+extend ./layout/common.pug
+block content
+  h1.text-center this is user page
+  .container
+    if isAdmin
+      a.btn.btn-primary.mb-3(href='/users/create_user') New user
+    else
+      a.btn.btn-primary.mb-3(href='/users/profile') Profile
+    table.table.table-striped
+      thead
+        tr
+          th Avatar
+          th Name
+          th Email
+          th Phone
+          th
+          th
+      tbody
+        if countUser === 1
+          tr
+            td
+              img(src= users.avatarUrl, width= 32)
+            td= users.name
+            td= users.email
+            td= users.phone
+        else if countUser > 1
+          each user in users
+            tr
+              td
+                img(src= user.avatarUrl, width= 32)
+              td= user.name
+              td= user.email
+              td= user.phone
+              td
+                a.btn.btn-warning.ml-3.float-right(href= '/users/'+ user.id ) Edit  
+              td
+                a.btn.btn-danger.ml-3.float-right(href='/users/'+ user.id + '/delete' ) Delete
+  if isAdmin  
+    nav(aria-label='Page navigation example')
+      ul.pagination.justify-content-center.mt-3
+        li.page-item
+          a.page-link(href='/users?page=' + previousPage, aria-label='Previous')
+            span(aria-hidden='true') &laquo;
+        li.page-item.active
+          a.page-link(href='/users?page=' + currenPage)= currenPage
+        li.page-item
+          a.page-link(href='/users?page=' + (currenPage + 1))= currenPage + 1
+        li.page-item
+          a.page-link(href='/users?page=' + (currenPage + 2))= currenPage + 2
+        li.page-item
+          a.page-link(href='/users?page=' + nextPage, aria-label='Next')
+            span(aria-hidden='true') &raquo; 
+    
+
+          

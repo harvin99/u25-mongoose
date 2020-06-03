@@ -1,0 +1,41 @@
+extend ./layout/common.pug
+block content
+  h1.text-center This is books page
+  .container
+    if user.isAdmin
+      a.btn.btn-primary.mb-3(href='/books/create') New book
+      table.table.table-striped
+        thead
+          tr
+            th Title
+            th  
+        tbody
+          each book in list
+            tr
+              td= book.title
+              td 
+                a.btn.btn-danger.ml-3.float-right(href='/books/'+ book.id + '/delete' ) Delete
+                a.btn.btn-warning.ml-3.float-right(href= '/books/'+ book.id ) Edit
+    else
+      .container.d-flex.flex-wrap
+        each book in list
+          .card.mr-3.mb-3(style='width:250px')
+            img.card-img-top(src= book.image, alt='Card image', style='width:100%')
+            .card-body
+              h4.card-title= book.title
+              p.card-text= book.description
+  nav(aria-label='Page navigation example')
+    ul.pagination.justify-content-center.mt-3
+      li.page-item
+        a.page-link(href='/books?page=' + previousPage, aria-label='Previous')
+          span(aria-hidden='true') &laquo;
+      li.page-item.active
+        a.page-link(href='/books?page=' + currenPage)= currenPage
+      li.page-item
+        a.page-link(href='/books?page=' + (currenPage + 1))= currenPage + 1
+      li.page-item
+        a.page-link(href='/books?page=' + (currenPage + 2))= currenPage + 2
+      li.page-item
+        a.page-link(href='/books?page=' + nextPage, aria-label='Next')
+          span(aria-hidden='true') &raquo; 
+            

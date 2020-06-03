@@ -1,0 +1,10 @@
+h1.text-center Edit book
+.container
+  .form-group
+    label(for='title') Title:
+      input.form-control(type='text', name='title' value=book.title)
+  .form-group
+    label(for='description') Description:
+      input.form-control(type='text', name='description' value=book.description)
+  button.btn.btn-primary.mr-2(type='submit') Save
+  a.btn.btn-secondary(href='/books') Cancel

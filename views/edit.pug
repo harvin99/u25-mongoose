@@ -1,0 +1,4 @@
+extend ./layout/common.pug
+block content
+  form(action='/books/' + book.id, method="POST")
+    include _form_edit_field.pug

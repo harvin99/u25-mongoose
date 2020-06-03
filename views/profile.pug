@@ -1,0 +1,11 @@
+extend ./layout/common.pug 
+block content
+    h1.text-center This is Profile page
+    .container.justify-content-center
+        .card(style="width: 50%, margin: 0 auto;")
+            img.card-img-top#avatar(src= user.avatarUrl, alt='Card image')
+            .card-body.ml-5
+                h4.card-title= user.name
+                p.card-text=  user.email
+                p.card-text= user.phone
+                a.btn.btn-primary(href='/users/profile/avatar') Update Profile

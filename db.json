@@ -1,0 +1,190 @@
+{
+  "books": [
+    {
+      "id": "6RFWnDf70",
+      "title": "Đệ nhất kiếm tiền",
+      "description": "Huấn Rose",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "937accNkD",
+      "title": "Lịch sử thế giới",
+      "description": "Các sự kiện đã qua",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "1103493d-101e-4e12-a52b-3af0b34763a8",
+      "title": "Human Resources Manager, The",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "7ce3a583-92df-4c64-9cac-44f3a7301f22",
+      "title": "Dr. Jekyll and Mr. Hyde",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "37a65424-51e0-4485-84ab-c88fe2b47c75",
+      "title": "Get Well Soon",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "26879fc7-d5ec-421c-961a-cb94dd320645",
+      "title": "Marathon Man",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "896f5ee3-f96a-45b9-acd5-d4d93d332adc",
+      "title": "Species II",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "d804cd99-0fda-479c-827e-9767afbcbbca",
+      "title": "Prime Suspect 3",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "ac240206-6d0e-444d-a0c2-55db8b19d467",
+      "title": "Kiss Them for Me",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "1bab9f56-474a-4501-86e5-a1d5a7fa344b",
+      "title": "Brick Lane",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "41b05823-7dd0-4963-8771-308e43c41301",
+      "title": "Täynnä Tarmoa",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "3df7da5d-e42f-4431-944e-a020ebd0597c",
+      "title": "Saint Ralph",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "5d43f386-3d55-4cd6-a574-57ea102ba706",
+      "title": "Teddy Bear (10 timer til Paradis)",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "495bb306-336d-4880-85e6-a4f1a1e14c6e",
+      "title": "Cialo",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "c73e61fd-a0b1-473d-93ff-24bf25ccbad5",
+      "title": "Mina Tannenbaum",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "086ee6a5-2389-4571-92d1-ecbf4f7c4006",
+      "title": "Best Defense",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "0dfbce59-4fa9-4495-b870-98f5de5ae325",
+      "title": "Battleground",
+      "description": "Lorem ipsum dolor sit amet",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "e79db223-b3a4-44b7-bb23-a15786666e2b",
+      "title": "Dodsworth",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "5a04336e-61c5-4b64-98f2-547b9c7514f3",
+      "title": "Distant Thunder",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "38d30c36-ff63-41f2-8939-9b82bf86f538",
+      "title": "Good Day to Die Hard, A",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "ffec0353-6856-4e7c-89c6-542f7e0b3306",
+      "title": "Condorman",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    },
+    {
+      "id": "a630da6b-6da4-40a8-80ca-827946183ad0",
+      "title": "Beyond the Mind's Eye",
+      "description": "consectetur adipisicing elit.",
+      "image": "https://loremflickr.com/320/240"
+    }
+  ],
+  "users": [
+    {
+      "id": "NwuEhLgUn",
+      "name": "admin",
+      "email": "admin@admin.com",
+      "phone": "123123",
+      "password": "$2b$10$H7.SbE5DxWSqQND852902ur/QqXvg0EDw.vrX.edUIIGiPjKrXEou",
+      "isAdmin": true,
+      "wrongLoginCount": 0,
+      "avatarUrl": "/avatar_default.jpg"
+    },
+    {
+      "id": "u3QGGmoqQ",
+      "name": "HarVin",
+      "email": "hungtx1001@gmail.com",
+      "phone": "123321",
+      "password": "$2b$10$v9nBQzkxIFEyLSbDUwL1e.1Afms5GmydRnI1qR0h5kO4sJcM1kF5K",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatarUrl": "/avatar_default.jpg"
+    },
+    {
+      "id": "HYXX4jdQE",
+      "name": "Trần Quang Huy",
+      "email": "1760323@student.hcmus.edu.vn",
+      "phone": "123321",
+      "password": "$2b$10$dEMrw91dLTAnwVQzoqIaGe.0vSUCkaym3koFmwoykTmcFw9xg6LDe",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatarUrl": "http://res.cloudinary.com/hungtx1001/image/upload/v1591198739/ijifurqizcrd1wyfgghb.jpg"
+    },
+    {
+      "id": "uCH2qqIak",
+      "name": "Lương Tuấn Phi",
+      "email": "phi@daubuoi.com",
+      "phone": "0911999000",
+      "password": "$2b$10$1RCgWoC6GkC3tms1RNt1ROmiLJ8da40C8Krr5sldYrtawohKC4cde",
+      "isAdmin": false,
+      "wrongLoginCount": 0,
+      "avatarUrl": "http://res.cloudinary.com/hungtx1001/image/upload/v1591199496/kj7hofci8lpkbgh8lmcn.jpg"
+    }
+  ],
+  "rents": [
+    {
+      "userId": "HYXX4jdQE",
+      "bookId": "0dfbce59-4fa9-4495-b870-98f5de5ae325",
+      "isComplete": false
+    },
+    {
+      "userId": "HYXX4jdQE",
+      "bookId": "41b05823-7dd0-4963-8771-308e43c41301",
+      "isComplete": false
+    }
+  ]
+}

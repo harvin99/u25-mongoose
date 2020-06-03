@@ -1,0 +1,47 @@
+extend ./layout/common.pug
+block content
+  h1.text-center This is transaction page
+  .container
+    a.btn.btn-primary.mb-3(href='transactions/create') Rent book
+    table.table.table-striped
+          thead
+            tr
+              th UserId
+              th BookId
+              th Status
+              th
+          tbody
+            if isAdmin
+              each tran in trans
+                tr
+                  td= tran.userId
+                  td= tran.bookId
+                  td
+                    if tran.isComplete
+                      a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Completed
+                    else
+                      a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Complete
+            else
+              tr
+                td= trans.userId
+                td= trans.bookId
+                td
+                  if trans.isComplete
+                    p Completed
+                  else
+                    p Not Complete
+  if isAdmin  
+    nav(aria-label='Page navigation example')
+      ul.pagination.justify-content-center.mt-3
+        li.page-item
+          a.page-link(href='/transactions?page=' + previousPage, aria-label='Previous')
+            span(aria-hidden='true') &laquo;
+        li.page-item.active
+          a.page-link(href='/transactions?page=' + currenPage)= currenPage
+        li.page-item
+          a.page-link(href='/transactions?page=' + (currenPage + 1))= currenPage + 1
+        li.page-item
+          a.page-link(href='/transactions?page=' + (currenPage + 2))= currenPage + 2
+        li.page-item
+          a.page-link(href='/transactions?page=' + nextPage, aria-label='Next')
+            span(aria-hidden='true') &raquo; 

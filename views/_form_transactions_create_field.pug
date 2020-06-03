@@ -1,0 +1,14 @@
+h1.text-center New rent book
+.container
+  .form-group
+    label(for='name') Name renter:
+      select.form-control(name='selectedname')
+        each user in users
+          option(value= user.id)= user.name
+  .form-group
+    label(for='book') Book:
+      select.form-control(name='selectedbook')
+        each book in books
+          option(value= book.id)= book.title
+  button.btn.btn-primary.mr-2(type='submit') Create
+  a.btn.btn-secondary(href='/transactions') Cancel
