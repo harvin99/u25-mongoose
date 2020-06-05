@@ -4,6 +4,7 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js')
+    script(src='https://kit.fontawesome.com/70644e8b1d.js', crossorigin='anonymous')
 
     link(rel='stylesheet', href='/custom.css')
     link(rel="Icon", href='https://cdn.glitch.com/1bbfbd33-efe2-4c09-8be5-c6d0cb08b9be%2Flogo.png?v=1590382358143', type='image/png')
@@ -23,6 +24,10 @@ html
             a.nav-link(href='/users') Users
           li.nav-item
             a.nav-link(href='/transactions') Transactions
+        
+      a.float-right.mr-3(href='/cart', style='color: #fff;') 
+        i.fas.fa-shopping-cart
+
       if user
         p.username= user.name
     block content

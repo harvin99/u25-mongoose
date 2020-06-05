@@ -2,7 +2,7 @@ extend ./layout/common.pug
 block content
   h1.text-center This is books page
   .container
-    if user.isAdmin
+    if user && user.isAdmin
       a.btn.btn-primary.mb-3(href='/books/create') New book
       table.table.table-striped
         thead
@@ -24,6 +24,7 @@ block content
             .card-body
               h4.card-title= book.title
               p.card-text= book.description
+              a.btn.btn-primary(href='/cart/add/' + book.id) Add to cart
   nav(aria-label='Page navigation example')
     ul.pagination.justify-content-center.mt-3
       li.page-item

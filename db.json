@@ -177,14 +177,100 @@
   ],
   "rents": [
     {
+      "id": "1",
       "userId": "HYXX4jdQE",
       "bookId": "0dfbce59-4fa9-4495-b870-98f5de5ae325",
       "isComplete": false
     },
     {
+      "id": "2",
       "userId": "HYXX4jdQE",
       "bookId": "41b05823-7dd0-4963-8771-308e43c41301",
       "isComplete": false
     }
-  ]
+  ],
+  "sessions": [
+    {
+      "id": "8IMfyqft6"
+    },
+    {
+      "id": "9qZMseYM2v"
+    },
+    {
+      "id": "JYhMlKP9ba"
+    },
+    {
+      "id": "UnTwp3RGso"
+    },
+    {
+      "id": "iOzpz_NZT"
+    },
+    {
+      "id": "yK9-4QM_ig"
+    },
+    {
+      "id": "5HCiFE41p"
+    },
+    {
+      "id": "7cWjIIR_Ka"
+    },
+    {
+      "id": "S6mXi7ukq"
+    },
+    {
+      "id": "fg2FqhQxb6"
+    },
+    {
+      "id": "rlaTVh46C"
+    },
+    {
+      "id": "ip-n086R-v"
+    },
+    {
+      "id": "RCHc1gxya8"
+    },
+    {
+      "id": "cAWUCUJc0K"
+    },
+    {
+      "id": "d0nlsLI7S"
+    },
+    {
+      "id": "vXEC6Lf1V"
+    },
+    {
+      "id": "BvLGzpvXDJ"
+    },
+    {
+      "id": "nrb90GYX7"
+    },
+    {
+      "id": "roBtPVAs1N"
+    },
+    {
+      "id": "YueZP72QX"
+    },
+    {
+      "id": "zoewlEdb3Q"
+    },
+    {
+      "id": "8IwuEArhY"
+    },
+    {
+      "id": "agGbaWOZWn"
+    },
+    {
+      "id": "HmvWW8hQYS"
+    },
+    {
+      "id": "7CYtTzDSNe"
+    },
+    {
+      "id": "k7I1UQcmC"
+    },
+    {
+      "id": "30k0kVeLaT"
+    }
+  ],
+  "fileUploads": []
 }

@@ -42,6 +42,7 @@ module.exports.getCreateTransaction = (req, res) => {
 
 module.exports.postCreateTransaction = (req, res) => {
   const rent = {
+    id: shortid.generate(),
     userId: req.body.selectedname,
     bookId: req.body.selectedbook,
     isComplete: false
