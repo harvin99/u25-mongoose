@@ -61,3 +61,14 @@ module.exports.getBookIdToDelete = (req, res) => {
     .write();
   res.redirect("/books");
 };
+
+module.exports.getBookCover = (req, res) => { 
+  res.render('add_book_cover')
+}
+module.exports.postBookCover = (req, res) => {
+  db.get('books')
+    .find({id: req.params.id})
+    .assign({coverUrl : req.file.path.split('\\').slice(1).join('/')})
+    .write()
+  res.redirect('/books')
+}

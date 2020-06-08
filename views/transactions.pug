@@ -6,30 +6,31 @@ block content
     table.table.table-striped
           thead
             tr
-              th UserId
-              th BookId
+              th User
+              th Book
               th Status
               th
           tbody
             if isAdmin
               each tran in trans
                 tr
-                  td= tran.userId
-                  td= tran.bookId
+                  td= tran.userName
+                  td= tran.bookTitle
                   td
                     if tran.isComplete
                       a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Completed
                     else
                       a.btn.btn-primary.ml-3(href='/transactions/' + tran.id + '/complete') Complete
             else
-              tr
-                td= trans.userId
-                td= trans.bookId
-                td
-                  if trans.isComplete
-                    p Completed
-                  else
-                    p Not Complete
+              each tran in trans
+                tr
+                  td= tran.userName
+                  td= tran.bookTitle
+                  td
+                    if tran.isComplete
+                      p Completed
+                    else
+                      p Not Complete
   if isAdmin  
     nav(aria-label='Page navigation example')
       ul.pagination.justify-content-center.mt-3

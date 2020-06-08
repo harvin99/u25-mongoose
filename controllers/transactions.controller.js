@@ -14,10 +14,18 @@ module.exports.getTransaction = (req, res) => {
   var start = (page - 1)* perPage
   var end = page * perPage
   var items = db.get("rents").value().slice(start, end)
-
+  var list = []
+  
   if(user.isAdmin){
+    for(tran of items){
+      let item = {
+        userName: db.get('users').find({id: tran.userId}).value().name,
+        bookTitle: db.get('books').find({id: tran.bookId}).value().title
+      }
+      list.push(item)
+    }
     res.render('transactions', {
-      trans: items,
+      trans: list,
       currenPage: page,
       nextPage: page + 1,
       previousPage: page - 1,
@@ -26,8 +34,26 @@ module.exports.getTransaction = (req, res) => {
   }
   else
   {
+    const tranUser = items.filter(item => item.userId === user.id)
+    if(tranUser.length > 1){
+      for(tran of tranUser){
+        let item = {
+          userName: db.get('users').find({id: tran.userId}).value().name,
+          bookTitle: db.get('books').find({id: tran.bookId}).value().title
+        }
+        list.push(item)
+      }
+    }
+    else{
+      let item = {
+        userName: db.get('users').find({id: tranUser.userId}).value().name,
+        bookTitle: db.get('books').find({id: tranUser.bookId}).value().title
+      }
+      list.push(item)
+    }
+    console.log(list)
     res.render('transactions', {
-      trans: db.get('rents').find({userId: user.id}).value(),
+      trans: list,
       idAdmin: false
     })
   }

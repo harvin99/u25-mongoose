@@ -16,11 +16,12 @@ block content
               td 
                 a.btn.btn-danger.ml-3.float-right(href='/books/'+ book.id + '/delete' ) Delete
                 a.btn.btn-warning.ml-3.float-right(href= '/books/'+ book.id ) Edit
+                a.btn.btn-success.ml-3.float-right(href= '/books/add_book_cover/'+ book.id ) Add Book Cover
     else
       .container.d-flex.flex-wrap
         each book in list
           .card.mr-3.mb-3(style='width:250px')
-            img.card-img-top(src= book.image, alt='Card image', style='width:100%')
+            img.card-img-top(src= book.coverUrl ? book.coverUrl : book.image, alt='Card image', style='width:100%')
             .card-body
               h4.card-title= book.title
               p.card-text= book.description

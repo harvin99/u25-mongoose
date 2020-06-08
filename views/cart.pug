@@ -1,3 +1,21 @@
 extend ./layout/common.pug
 block content
     h1.text-center This is cart page
+    table.table.table-striped
+        thead
+          tr
+            th Cover
+            th Title
+            th  Amount
+            th
+        tbody
+          each book in listBook
+            tr
+                td
+                    img(src= book.cover, style='width:60px;height:60px;')
+                td= book.bookTitle
+                td= book.amount 
+    .container
+      form.m-auto(action='', method="POST")
+        button.btn.btn-primary(type="submit") Rent Book
+        

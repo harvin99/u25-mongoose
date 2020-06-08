@@ -1,0 +1,9 @@
+extend ./layout/common.pug 
+block content
+    h1.text-center Upload Book Cover
+    .container
+        form(action='', method='POST', enctype='multipart/form-data')
+            .form-group
+                label(for='bookcover') Book Cover
+                input#avatar_upload.form-control-file(name='bookcover', type='file')
+            button.btn.btn-primary(type="submit") Upload

@@ -4,7 +4,8 @@
       "id": "6RFWnDf70",
       "title": "Đệ nhất kiếm tiền",
       "description": "Huấn Rose",
-      "image": "https://loremflickr.com/320/240"
+      "image": "https://loremflickr.com/320/240",
+      "coverUrl": "bookcovers/61ed7c69a1c0c17c5e1e5b3f921fe32c"
     },
     {
       "id": "937accNkD",
@@ -187,90 +188,56 @@
       "userId": "HYXX4jdQE",
       "bookId": "41b05823-7dd0-4963-8771-308e43c41301",
       "isComplete": false
+    },
+    {
+      "id": "akgKvTpQy",
+      "userId": "HYXX4jdQE",
+      "bookId": "e79db223-b3a4-44b7-bb23-a15786666e2b",
+      "isComplete": false
+    },
+    {
+      "id": "CISL3ZO7T",
+      "userId": "HYXX4jdQE",
+      "bookId": "1103493d-101e-4e12-a52b-3af0b34763a8",
+      "isComplete": false
+    },
+    {
+      "id": "ouQPemOJG_",
+      "userId": "HYXX4jdQE",
+      "bookId": "7ce3a583-92df-4c64-9cac-44f3a7301f22",
+      "isComplete": false
+    },
+    {
+      "id": "4OMimizp8V",
+      "userId": "HYXX4jdQE",
+      "bookId": "937accNkD",
+      "isComplete": false
     }
   ],
   "sessions": [
     {
-      "id": "8IMfyqft6"
+      "id": "S3vLgXMl-",
+      "cart": {
+        "937accNkD": 2,
+        "896f5ee3-f96a-45b9-acd5-d4d93d332adc": 1,
+        "d804cd99-0fda-479c-827e-9767afbcbbca": 1,
+        "6RFWnDf70": 3
+      }
     },
     {
-      "id": "9qZMseYM2v"
+      "id": "8XuHQqyBp",
+      "cart": {
+        "6RFWnDf70": 2,
+        "937accNkD": 1
+      }
     },
     {
-      "id": "JYhMlKP9ba"
-    },
-    {
-      "id": "UnTwp3RGso"
-    },
-    {
-      "id": "iOzpz_NZT"
-    },
-    {
-      "id": "yK9-4QM_ig"
-    },
-    {
-      "id": "5HCiFE41p"
-    },
-    {
-      "id": "7cWjIIR_Ka"
-    },
-    {
-      "id": "S6mXi7ukq"
-    },
-    {
-      "id": "fg2FqhQxb6"
-    },
-    {
-      "id": "rlaTVh46C"
-    },
-    {
-      "id": "ip-n086R-v"
-    },
-    {
-      "id": "RCHc1gxya8"
-    },
-    {
-      "id": "cAWUCUJc0K"
-    },
-    {
-      "id": "d0nlsLI7S"
-    },
-    {
-      "id": "vXEC6Lf1V"
-    },
-    {
-      "id": "BvLGzpvXDJ"
-    },
-    {
-      "id": "nrb90GYX7"
-    },
-    {
-      "id": "roBtPVAs1N"
-    },
-    {
-      "id": "YueZP72QX"
-    },
-    {
-      "id": "zoewlEdb3Q"
-    },
-    {
-      "id": "8IwuEArhY"
-    },
-    {
-      "id": "agGbaWOZWn"
-    },
-    {
-      "id": "HmvWW8hQYS"
-    },
-    {
-      "id": "7CYtTzDSNe"
-    },
-    {
-      "id": "k7I1UQcmC"
-    },
-    {
-      "id": "30k0kVeLaT"
+      "id": "aTGLnVFNg",
+      "cart": {
+        "1103493d-101e-4e12-a52b-3af0b34763a8": 1,
+        "7ce3a583-92df-4c64-9cac-44f3a7301f22": 1,
+        "937accNkD": 1
+      }
     }
-  ],
-  "fileUploads": []
+  ]
 }

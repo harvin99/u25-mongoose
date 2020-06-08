@@ -25,9 +25,8 @@ html
           li.nav-item
             a.nav-link(href='/transactions') Transactions
         
-      a.float-right.mr-3(href='/cart', style='color: #fff;') 
+      a.float-right.mr-3(href='/cart', style='color: #fff;')
         i.fas.fa-shopping-cart
-
       if user
         p.username= user.name
     block content
