@@ -14,7 +14,8 @@ const sessionMiddleware = require('./middlewares/session.middleware')
 //For DB
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
-    useUnifiedTopology: true 
+    useUnifiedTopology: true,
+    useFindAndModify : false
 })
 //Connect mongoose 
 mongoose.connection.on('connected', () => {
