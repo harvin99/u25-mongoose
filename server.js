@@ -1,6 +1,8 @@
 require('dotenv').config()
 const express = require("express")
+const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
+
 const booksRouter = require('./routes/books.router')
 const usersRouter = require('./routes/users.router')
 const authRouter = require('./routes/auth.router')
@@ -9,7 +11,15 @@ const cartRouter = require('./routes/cart.router')
 
 const authMiddleware = require('./middlewares/auth.middleware')
 const sessionMiddleware = require('./middlewares/session.middleware')
-
+//For DB
+mongoose.connect(process.env.MONGO_URI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true 
+})
+//Connect mongoose 
+mongoose.connection.on('connected', () => {
+  console.log('Mongoose is connected !!!')
+})
 const app = express()
 //For body parser 
 app.use(express.urlencoded({extended: false}))
@@ -32,6 +42,7 @@ app.use('/users', authMiddleware.requireAuth, usersRouter)
 app.use('/auth', authRouter)
 app.use('/transactions', authMiddleware.requireAuth, transactionsRouter)
 app.use('/cart', cartRouter)
+
 // listen for requests :)
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port)

@@ -1,22 +1,22 @@
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
+const User = require('../models/users.model')
 
-const adapter = new FileSync('db.json')
-const db = low(adapter)
-
-
-module.exports.requireAuth = (req, res, next) => {
+module.exports.requireAuth = async (req, res, next) => {
   
-  if(!req.signedCookies.userId){
-    res.redirect('/auth/login')
-    return
+  try {
+    if(!req.signedCookies.userId){
+      res.redirect('/auth/login')
+      return
+    }
+    //const user = db.get('users').find({id: req.signedCookies.userId}).value()
+    const user = await User.findById({_id : req.signedCookies.userId})
+    if(!user){
+      res.redirect('/auth/login')
+      return
+    }
+    
+    res.locals.user = user;
+    next()
+  } catch (error) {
+    console.log(error.message)
   }
-  const user = db.get('users').find({id: req.signedCookies.userId}).value()
-  if(!user){
-    res.redirect('/auth/login')
-    return
-  }
-  
-  res.locals.user = user;
-  next()
 }

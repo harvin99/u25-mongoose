@@ -3,8 +3,11 @@ h1.text-center New rent book
   .form-group
     label(for='name') Name renter:
       select.form-control(name='selectedname')
-        each user in users
-          option(value= user.id)= user.name
+        if users.length > 1
+          each user in users
+            option.selected(value= user.id)= user.name
+        else 
+          option(value= users.id)= users.name
   .form-group
     label(for='book') Book:
       select.form-control(name='selectedbook')
