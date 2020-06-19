@@ -6,7 +6,7 @@ const shortid = require('shortid')
 
 module.exports.getTransaction = async (req, res) => {
   try {
-    const user = await User.findById({_id: req.signedCookies.userId})
+    const user = await User.findById(req.signedCookies.userId)
 
     var page = parseInt(req.query.page) || 1
     const perPage = 8
@@ -20,8 +20,8 @@ module.exports.getTransaction = async (req, res) => {
       var list = []
       if(user.isAdmin){
           for(var tran of items){
-            let tempUser = await User.findById({_id: tran.userId})
-            let tempBook = await Book.findById({_id: tran.bookId})
+            let tempUser = await User.findById(tran.userId)
+            let tempBook = await Book.findById(tran.bookId)
             let item = {
                 id : tran._id,
                 userName : tempUser.name,
@@ -43,8 +43,8 @@ module.exports.getTransaction = async (req, res) => {
           var tranUser = items.filter(item => item.userId === user.id)
           if(tranUser.length > 0){
             for(var tran of tranUser){
-              let tempUser = await User.findById({_id: tran.userId})
-              let tempBook = await Book.findById({_id: tran.bookId})
+              let tempUser = await User.findById(tran.userId)
+              let tempBook = await Book.findById(tran.bookId)
               let item = {
                 id : tran._id,
                 userName : tempUser.name,
@@ -74,6 +74,8 @@ module.exports.getTransaction = async (req, res) => {
 module.exports.getCreateTransaction = async (req, res) => {
   try {
     var user = await User.findById({_id: req.signedCookies.userId})
+    // console.log(typeof(req.signedCookies.userId))
+    // console.log(typeof(user._id))
     if(user.isAdmin){
       res.render('transactions_create',{
         users : await User.find(),

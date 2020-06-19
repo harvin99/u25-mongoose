@@ -11,38 +11,14 @@ module.exports.addToCart = async (req, res, next) => {
             res.redirect('/books')
             return
         }
-            
-        const sess = await Session.findById({_id: sessionId})
-        if(bookId in sess.cart){
-            const count = sess.cart[bookId] 
-            if (!count) {
-                await Session.findByIdAndUpdate(
-                    sessionId,
-                    {
-                        cart: {
-                        ...sess.cart,
-                        [bookId]: 1,
-                        },
-                    }
-                );
-            } else {
-                await Session.findByIdAndUpdate(
-                    sessionId,
-                    { cart: { ...sess.cart, [bookId]: count + 1 } }
-                );
+        await Session.findByIdAndUpdate(sessionId, {
+            $inc : {
+                ['cart.' + bookId] : 1
             }
-        }
-        else{
-            await Session.findByIdAndUpdate(
-                sessionId,
-                {
-                    cart: {
-                    ...sess.cart,
-                    [bookId]: 1,
-                    },
-                }
-            );
-        }
+        })
+        const sess = await Session.findById(sessionId)
+        const count = sess.cart[bookId]
+        //console.log(count)
         res.redirect('/books')
     } catch (error) {
         console.log(error.message)
@@ -50,20 +26,11 @@ module.exports.addToCart = async (req, res, next) => {
 }
 module.exports.getCart = async (req, res) => {
     try {
-        var sessions = await Session.findById({_id : req.signedCookies.sessionId})
+        var sessions = await Session.findById(req.signedCookies.sessionId)
         var sumBook = 0
         var listBook = []
-            //Delete defaultKey in cart
-            for(key in sessions.cart){
-                if(key === "defaultKey"){
-                    delete sessions.cart.key
-                    break
-                }
-            }
-            console.log(sessions.cart)
-
             for(bookId in sessions.cart){
-                var book = await Book.findById({_id: bookId})
+                var book = await Book.findById(bookId)
                 var bookData = {
                     id:book.id,
                     bookTitle: book.title,
@@ -84,26 +51,14 @@ module.exports.postCart = async (req, res) => {
     try {
         //If User Signed in
         if(req.signedCookies.userId){
-            // const sessions = db.get('sessions')
-            //                 .find({id: req.signedCookies.sessionId})
-            //                 .value()
-            const sessions = await Session.findOne({id: req.signedCookies.sessionId})
-            for(bookId in sessions.cart){
-                    // var rent = {
-                    //     id: shortid.generate(),
-                    //     userId: req.signedCookies.userId,
-                    //     bookId: bookId,
-                    //     isComplete: false
-                    // }
+            const session = await Session.findById(req.signedCookies.sessionId)
+            for(bookId in session.cart){
                     let rent = new Transaction()
                     rent.userId = req.signedCookies.userId
                     rent.bookId = bookId
+                    rent.amount = session.cart[bookId]
                     rent.isComplete = false
-                    //db.get('rents').push(rent).write()
-                    rent.save(function(error){
-                        if(error)
-                            return console.error(error)
-                    })
+                    rent.save()
             }
             res.redirect('/transactions')
         }

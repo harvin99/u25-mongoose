@@ -5,10 +5,6 @@ const User = require('../models/users.model')
 
 module.exports.getUser = async (req, res) => {
   try {
-    // const user = db
-  //   .get("users")
-  //   .find({ id: req.signedCookies.userId })
-  //   .value();
   const user = await User.findById({_id: req.signedCookies.userId})
   var page = parseInt(req.query.page) || 1
   const perPage = 8
@@ -44,10 +40,6 @@ module.exports.createUser = (req, res) => {
 };
 module.exports.postCreateUser = async (req, res) => {
   try {
-      // const existEmailUser = db
-      // .get("users")
-      // .find({ email: req.body.email })
-      // .value();
       const existEmailUser = await User.findOne({ email: req.body.email })
     if (existEmailUser) {
       res.render("create_user", {
@@ -82,10 +74,6 @@ module.exports.postCreateUser = async (req, res) => {
 
 module.exports.getUserId = async (req, res) => {
   try {
-    // const user = db
-    // .get("users")
-    // .find({ id: req.params.id })
-    // .value();
     const user = await User.findById({_id: req.params.id})
     res.render("edit_user", { user: user });
   } catch (error) {
@@ -95,10 +83,6 @@ module.exports.getUserId = async (req, res) => {
 
 module.exports.postUserId = async (req, res) => {
   try {
-    // db.get("users")
-    // .find({ id: req.params.id })
-    // .assign({ name: req.body.name, phone: req.body.phone })
-    // .write();
     const resultUser = await User.findByIdAndUpdate(req.params.id, 
                     { name: req.body.name, phone: req.body.phone })
     res.redirect("/users");
@@ -108,9 +92,6 @@ module.exports.postUserId = async (req, res) => {
 };
 module.exports.getUserIdToDelete = async (req, res) => {
   try {
-    // db.get("users")
-    // .remove({ id: req.params.id })
-    // .write();
     const resultUser = await User.findByIdAndDelete(req.params.id)
     res.redirect("/users");
   } catch (error) {
@@ -119,10 +100,6 @@ module.exports.getUserIdToDelete = async (req, res) => {
 };
 module.exports.getProfileUser = async (req, res) => {
   try {
-    // const user = db
-    // .get("users")
-    // .find({ id: req.signedCookies.userId })
-    // .value()
     const user = await User.findById({ id: req.signedCookies.userId })
     res.render('profile', {
       user: user
@@ -143,11 +120,7 @@ module.exports.getUpdateAvatar = (req, res) => {
 module.exports.postUpdateAvatar =  (req, res) => {
     cloudinary.uploader.upload(req.file.path, async function(error, result) { 
       try {
-          //console.log(result.url) 
-        // db.get('users')
-        //   .find({id: req.signedCookies.userId})
-        //   .assign({avatarUrl: result.url})
-        //   .write()
+        
         const resultUser = await User.findByIdAndUpdate(req.signedCookies.userId, 
           {avatarUrl: result.url})
       } catch (error) {

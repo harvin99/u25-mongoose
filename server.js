@@ -2,6 +2,10 @@ require('dotenv').config()
 const express = require("express")
 const mongoose = require('mongoose')
 const cookieParser = require('cookie-parser')
+const bodyParser = require('body-parser')
+
+const apiLoginRouter = require('./api/routes/api.login.router')
+const apiTransactionsRouter = require('./api/routes/api.transactions.router')
 
 const booksRouter = require('./routes/books.router')
 const usersRouter = require('./routes/users.router')
@@ -23,7 +27,8 @@ mongoose.connection.on('connected', () => {
 })
 const app = express()
 //For body parser 
-app.use(express.urlencoded({extended: false}))
+app.use(bodyParser.urlencoded({extended: false}))
+app.use(bodyParser.json())
 //For favicon
 app.use(express.static('public'))
 app.use(cookieParser(process.env.SESSION_KEY))
@@ -33,7 +38,9 @@ app.use(sessionMiddleware)
 //Set view engine template
 app.set('view engine', 'pug')
 app.set('views', './views')
-
+//For API
+app.use('/api/login', apiLoginRouter)
+app.use('/api/transactions', apiTransactionsRouter)
 //Router
 app.get('/', (req,res) => {
   res.render('index')
